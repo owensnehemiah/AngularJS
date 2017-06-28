@@ -6,13 +6,20 @@ import { HttpModule } from '@angular/http';
 
 import { AppComponent } from './app.component';
 import { ServerComponent } from './server/server.component';
+import { WarningComponent } from './warningalert/warningalert.component';
 import { ServersComponent } from './servers/servers.component';
+import { SuccessAlertComponent } from './success-alert/success-alert.component';
+import { NewideaComponent } from './newidea/newidea.component';
+
 
 @NgModule({
   declarations: [
     AppComponent,
     ServerComponent,
-    ServersComponent
+    ServersComponent,
+    WarningComponent,
+    SuccessAlertComponent,
+    NewideaComponent
   ],
   imports: [
     BrowserModule,
