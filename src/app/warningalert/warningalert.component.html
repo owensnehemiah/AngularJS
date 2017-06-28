@@ -1,0 +1,14 @@
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<script src = "warningalert.component.css" type="text/javascript"></script>
+<input type = "text" class = "form-control input-sm" [(ngModel)] = "username"><br />
+<div class = "container">
+    {{ username }} 
+</div>
+
+<button 
+        type="button" 
+        class = "btn btn-primary" 
+        [disabled] = "username === '' "
+        (click) = "onCreationUsername()">Add Username</button>
+
+<p id = "warning"> {{ usernameCreationStatus }}  {{ username }}</p>
