@@ -1,14 +1,29 @@
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 <script src = "warningalert.component.css" type="text/javascript"></script>
 <input type = "text" class = "form-control input-sm" [(ngModel)] = "username"><br />
+
 <div class = "container">
     {{ username }} 
 </div>
 
-<button 
-        type="button" 
-        class = "btn btn-primary" 
-        [disabled] = "username === '' "
-        (click) = "onCreationUsername()">Add Username</button>
+<button type="button" class = "btn btn-primary" [disabled] = "username === '' " (click) = "onCreationUsername()">Add Username</button>
+        
+<!-- Structural directives ['*ngFor', '*ngIf'] -->
+<p id = "warning" *ngIf="serverCreated; else noServer"> {{ usernameCreationStatus }}  {{ username }}</p>
 
-<p id = "warning"> {{ usernameCreationStatus }}  {{ username }}</p>
+<ng-template #noServer>
+    <p>No server was created!</p>   
+</ng-template>
+
+<!-- 'let' is a temporary variable name for the loop. server is the name of the variable. servers is defined in the typescript file --> 
+
+<button type="button" class="btn btn-primary" (click)="toggleDisplay()"> Display Details </button>
+  
+
+<p *ngIf="buttonStatus"> Practicing AngularJS and Typescript</p>
+
+<!--Using index allows any type of context to be considered in an array. -->
+<div *ngFor="let logItem of log; let i = index" 
+     [ngStyle]="{background: i >= 4 ? 'blue' : 'transpartent'}"
+     [ngClass]="{'whiteFont': i >=4 }"> {{ logItem }} </div>
+<app-server *ngFor="let server of servers"></app-server>

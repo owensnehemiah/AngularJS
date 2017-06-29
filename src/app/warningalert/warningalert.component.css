@@ -1,0 +1,13 @@
+p {
+        padding: 20px;
+        background-color: green;
+        border: 2px solid darkgreen;
+    }  
+
+#toggleTest {
+    display:block;
+}
+
+.whiteFont {
+    color:white;
+}
